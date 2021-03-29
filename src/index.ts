@@ -18,6 +18,7 @@ class Pool {
     if (this.pool.length > 0) {
       const item = this.pool.shift()
       item(() => {
+        // this.size--
         this.exec()
       })
     }

@@ -5,7 +5,8 @@
   "author": "Konp",
   "license": "MIT",
   "scripts": {
-    "build": "esbuild ./src/index.ts --bundle --outfile=lib/easy-pool.js"
+    "dev": "esbuild ./src/test.ts --bundle --outfile=lib/easy-pool1.js",
+    "build": "esbuild ./src/index.ts --bundle --platform=node --outfile=lib/easy-pool.js"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.19.0",

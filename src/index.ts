@@ -1,14 +1,18 @@
 class Pool {
-  pool = []
-  size = 0
-  static MAX_SIZE = 5
+  private pool: ((cb: () => void) => void)[] = []
+  private size = 0
+  private maxSize: number
 
-  push(item: (cb: any) => void): void {
+  constructor(maxSize = 5) {
+    this.maxSize = maxSize
+  }
+
+  push(item: (cb: () => void) => void): void {
     if (!item && typeof item !== 'function') {
       return
     }
     this.pool.push(item)
-    if (this.size < Pool.MAX_SIZE) {
+    if (this.size < this.maxSize) {
       this.size++
       this.exec()
     }
@@ -18,7 +22,7 @@ class Pool {
     if (this.pool.length > 0) {
       const item = this.pool.shift()
       item(() => {
-        // this.size--
+        this.size--
         this.exec()
       })
     }

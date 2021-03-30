@@ -1,12 +1,19 @@
 {
   "name": "@konper/easy-pool",
   "version": "1.0.0",
-  "main": "lib/easy-pool.js",
+  "description": "Create pool to limit the preemption of resource.",
+  "main": "./lib/index.js",
+  "types": "./types/index.d.ts",
   "author": "Konp",
   "license": "MIT",
+  "files": [
+    "lib",
+    "src",
+    "types"
+  ],
   "scripts": {
-    "dev": "esbuild ./src/test.ts --bundle --outfile=lib/easy-pool1.js",
-    "build": "esbuild ./src/index.ts --bundle --platform=node --outfile=lib/easy-pool.js"
+    "dev": "esbuild ./tests/test.ts --bundle --outfile=lib/easy-pool-test.js & node lib/easy-pool-test.js",
+    "build": "esbuild ./src/index.ts --bundle --platform=node --outfile=lib/index.js"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.19.0",

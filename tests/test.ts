@@ -18,9 +18,14 @@ function test() {
   for (let i = 1; i <= TEST_NUM; i++) {
     pool.push(factory(i))
   }
+
   setTimeout(() => {
     pool.push(factory(TEST_NUM + 1, 1))
   }, 10 * 1000)
+
+  pool.on('done', () => {
+    console.log('done...')
+  })
 }
 
 test()

@@ -1,11 +1,12 @@
 {
   "name": "@konper/easy-pool",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Create pool to limit the preemption of resource.",
   "main": "./lib/index.js",
   "types": "./types/index.d.ts",
   "author": "Konp",
   "license": "MIT",
+  "type": "module",
   "files": [
     "lib",
     "src",

@@ -16,7 +16,7 @@ yarn
 yarn add @konper/easy-pool
 ```
 
-## Create Pool
+## Usage
 
 ```js
 const foo = (cb) => {
@@ -26,6 +26,14 @@ const foo = (cb) => {
   cb()
 }
 
-const pool = new Pool()
+const pool = new Pool([size = 5])
 pool.push(foo)
 ```
+
+### Event
+
+```js
+pool.on(event, callback)
+```
+
+- `done`: triggered when size became 0.

@@ -1,5 +1,4 @@
 import Pool from '../src/index'
-// import Pool from '../lib/index'
 
 function factory(no: number, timeout?: number) {
   return (cb: () => void) => {
